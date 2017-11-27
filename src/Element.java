@@ -2,12 +2,24 @@
  * Created by student on 11/17/17.
  */
 public class Element {
-    private String name;
-    private int weight, value;
+    private int id;
+    private boolean active;
 
-    public Element(String name, int weight, int value) {
-        this.name = name;
-        this.weight = weight;
-        this.value = value;
+    public Element(int id) {
+        this.id = id;
+    }
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
+    }
+    public int getWeight(){
+        return Population.elements[id][0];
+    }
+    public int getValue(){
+        return Population.elements[id][1];
     }
 }
