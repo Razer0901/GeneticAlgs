@@ -1,0 +1,98 @@
+//    public first.Gene[] mate (first.Gene gene) {
+//        String child1 = merge(this.code,gene.getCode());
+//        String child2 = merge(gene.getCode(),this.code);
+//
+//        return new first.Gene[]{new first.Gene(child1), new first.Gene(child2)};
+//    }
+//
+//    public String merge(String first, String second) {
+//        char[] firstChars = first.toCharArray();
+//        char[] secondChars = second.toCharArray();
+//
+//        int smallerCharsCount = Math.min(firstChars.length, secondChars.length);
+//        StringBuilder builder = new StringBuilder(smallerCharsCount * 2);
+//        for (int i = 0; i < smallerCharsCount; i++) {
+//            if(i % 2 == 0) {
+//                builder.append(firstChars[i]);
+//            }else {
+//                builder.append(secondChars[i]);
+//            }
+//        }
+//        return builder.toString();
+//    }
+
+
+//import java.util.ArrayList;
+//import java.util.Collections;
+//
+///**
+// * Created by student on 11/13/17.
+// */
+//public class first.Population {
+//    private int lastCost;
+//    private ArrayList<first.Gene> members;
+//    private String goal;
+//    private long lastTime;
+//    private int generationNumber = 0;
+//
+//    public first.Population(String goal, int size){
+//        this.members = new ArrayList<first.Gene>();
+//        this.goal = goal;
+//        this.generationNumber = 0;
+//        for (int i = 0; i < size; i++) {
+//            first.Gene gene = new first.Gene("");
+//            gene.generateRandomString(this.goal.length());
+//            this.members.add(gene);
+//        }
+//
+//        lastTime = System.currentTimeMillis();
+//
+//        this.lastCost = 0;
+//
+//    }
+//
+//    public void sort() {
+//        members.sort((o1, o2) -> o1.getCost() - o2.getCost());
+//    }
+//
+//    public int generation() {
+//        while(true) {
+//            this.sort();
+//            if(generationNumber % 1000 == 0) {
+//                this.lastCost = this.members.get(0).getCost();
+////                System.out.println();
+////                System.out.println("TIME: " + (System.currentTimeMillis() - lastTime));
+//                this.lastTime = System.currentTimeMillis();
+//            }
+//            first.Gene[] children = this.members.get(0).mate(this.members.get(1));
+//            this.members.remove(members.size() - 1);
+//            this.members.remove(members.size() - 1);
+//
+//            this.members.add(children[0]);
+//            this.members.add(children[1]);
+//
+//            long temp = System.currentTimeMillis();
+//            for (int i = 0; i < this.members.size(); i++) {
+//                this.members.get(i).mutate(0.5);
+//                this.members.get(i).calcCost(this.goal);
+//                if (this.members.get(i).getCode().equals(this.goal)) {
+//                    this.sort();
+////                    this.display();
+////                    System.out.println("GENERATION: " + generationNumber);
+//                    return generationNumber;
+//                }
+//            }
+//
+//
+//            this.generationNumber++;
+//            try {
+//                Thread.sleep(0);
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
+//        }
+//    }
+//}
+//
+///*
+// */
