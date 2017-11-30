@@ -3,10 +3,11 @@
  */
 public class Element {
     private int id;
-    private boolean active;
+    private boolean active = false;
 
-    public Element(int id) {
+    public Element(int id, boolean active) {
         this.id = id;
+        this.active = active;
     }
 
     public boolean isActive() {
